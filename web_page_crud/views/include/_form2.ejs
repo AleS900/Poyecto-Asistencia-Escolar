@@ -1,0 +1,42 @@
+         <!-- form handling -->
+ <form method="POST" id="update_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-black">Nombre Completo</label>
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <input type="text" name="name" value="<%= user.name %>" placeholder="Apellidos y Nombres">
+        </div>
+        <div class="form-group">
+            <label for="Email" class="text-black">Código Estudiante:</label>
+            <input type="text" name="email" value="<%= user.email%>" placeholder="ej. 11111">
+        </div>
+        <div class="form-group">
+            <label for="gender" class="text-black">Presente en Clase:</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="gender" value="Presente" <%= user.gender == 'Presente' ? 'checked' : '' %>>
+                <label for="radio-2" class="radio-label">Presente</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="gender" value="No Presente"  <%= user.gender == 'No Presente' ? 'checked' : '' %> >
+                <label for="radio-3" class="radio-label">No Presente</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="gender" class="text-black">Tarea:</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="status" value="Si" <%= user.status == 'Si' ? 'checked' : '' %> >
+                <label for="radio-4" class="radio-label">Si</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="status" value="No" <%= user.status == 'No' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">No</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Guardar</button>
+        </div>
+
+    </div>
+</form>
